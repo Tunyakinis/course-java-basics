@@ -25,9 +25,9 @@ public class Task08 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        if (typeMob == "UNDEAD" || typeMob == "ZOMBIE") {
+        if (typeMob.equals("UNDEAD") || typeMob.equals("ZOMBIE")) {
             System.out.println(damage * 15 / 10);
-        } else if (typeMob == "SAINT") {
+        } else if (typeMob.equals("SAINT")) {
             System.out.println(damage / 2);;
         } else
             System.out.println(damage);

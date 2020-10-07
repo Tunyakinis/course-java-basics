@@ -29,5 +29,17 @@ public class Task11 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+        if (letter >= '\u0400' && letter <= '\u04FF'){
+            System.out.println("cyrillic");
+        }
+        else if (letter >= '\u0030' && letter <= '\u0039'){
+            System.out.println("digit");
+        }
+        else if (letter >= '\u0041' && letter <= '\u005A' || letter >= '\u0061' && letter <= '\u007A') {
+            System.out.println("latin");
+        }
+        else{
+            System.out.println("undefined");
+        }
     }
 }

@@ -32,6 +32,26 @@ public class Task03 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return null;
+        String result = null;
+        int healthPercentage = currentHealthPoint*100/maxHealthPoint;
+        if (currentHealthPoint <= maxHealthPoint && currentHealthPoint > 0) {
+            if(healthPercentage <= 100 && healthPercentage >=75){
+                System.out.println("GREEN");
+                result = "GREEN";
+            }
+            else if(healthPercentage < 75 && healthPercentage >= 50){
+                System.out.println("YELLOW");
+                result = "YELLOW";
+            }
+            else if(healthPercentage < 50 && healthPercentage >= 25){
+                System.out.println("ORANGE");
+                result = "ORANGE";
+            }
+            else if(healthPercentage < 25 && healthPercentage >= 0){
+                System.out.println("RED");
+                result = "RED";
+            }
+        }
+        return result;
     }
 }

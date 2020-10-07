@@ -10,7 +10,7 @@ import com.rakovets.course.javabasics.util.StandardInputTask;
  * @author Dmitry Rakovets
  * @version 1.1
  */
-public class Task01 extends StandardInputTask {
+public class    Task01 extends StandardInputTask {
     public static void main(String[] args) {
         // Ввод данных осуществляется в Standard Input, для проверки различных вариантов входных параметров
         int sizeTop = INPUT_SCANNER.nextInt();
@@ -30,6 +30,12 @@ public class Task01 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+        boolean result = positionPlayerByDamage <= sizeTop;
+        if(result){
+            System.out.println(true);
+            return true;
+        }
+        System.out.println(false);
         return false;
     }
 }

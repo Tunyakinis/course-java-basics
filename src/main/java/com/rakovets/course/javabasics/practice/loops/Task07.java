@@ -1,5 +1,6 @@
 package com.rakovets.course.javabasics.practice.loops;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -26,5 +27,18 @@ public class Task07 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+        double distancePerDay = startDistance;
+        double totalDistance = 0;
+        if (distancePerDay != 0 && finishDistance != 0) {
+            while (distancePerDay < finishDistance) {
+                totalDistance += distancePerDay;
+                double progressPerDay = distancePerDay * dailyProgress / 100;
+                distancePerDay += progressPerDay;
+            }
+            System.out.printf(Locale.US, "%.2f", totalDistance);
+        } else {
+            totalDistance = 0;
+            System.out.printf(Locale.US, "%.2f", totalDistance);
+        }
     }
 }

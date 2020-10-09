@@ -12,6 +12,8 @@ import java.util.Scanner;
  * @return номера строк, где каждый номер на новой строке
  */
 public class Task01 {
+    private static Scanner input;
+
     public static void main(String[] args) {
         // Ввод данных осуществляется в Console, для проверки различных вариантов входных параметров
         Scanner scanner = new Scanner(System.in);
@@ -22,5 +24,11 @@ public class Task01 {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используяся переменные объявленные выше (их можно изменять)
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
+        for (int i = 1; i <= rows; i++) {
+            System.out.print(i);
+            if (i != rows) {
+                System.out.println();
+            }
+        }
     }
 }

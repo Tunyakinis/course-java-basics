@@ -2,6 +2,10 @@ package com.rakovets.course.javabasics.practice.arrays;
 
 import com.rakovets.course.javabasics.util.StandardInputTask;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 /**
  * Разработать программу для электронного дневника:
  * которая работает с отметками по каждому предмету.
@@ -32,7 +36,21 @@ public class Task03 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return null;
+        double average = 0;
+        double averageMark = 0;
+        double[] ResultArray = new double[marks.length];
+        for (int i = 0; i < marks.length; i++) {
+            for (int j = 0; j < marks[i].length; j++) {
+                average += marks[i][j];
+                averageMark = average / marks[i].length;
+            }
+            ResultArray[i] = averageMark;
+            DecimalFormat newFormat = new DecimalFormat("#.##", DecimalFormatSymbols.getInstance(Locale.US));
+            double result = Double.valueOf(newFormat.format(averageMark));
+            ResultArray[i] = result;
+            average = 0;
+        }
+        return ResultArray;
     }
 
     /**
@@ -45,7 +63,17 @@ public class Task03 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return null;
+        int[] minMarkArray = new int [marks.length];
+        for (int i = 0; i < marks.length; i++) {
+            int minMark = marks[i][0];
+            for (int j = 0; j < marks[i].length; j++) {
+                if (minMark > marks[i][j]) {
+                    minMark = marks [i][j];
+                }
+                minMarkArray[i] = minMark;
+            }
+        }
+        return minMarkArray;
     }
 
     /**
@@ -58,7 +86,17 @@ public class Task03 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return null;
+        int [] maxMarkArray = new int [marks.length];
+        for (int i = 0; i < marks.length; i++) {
+            int maxMark = marks[i][0];
+            for (int j = 0; j < marks[0].length; j++) {
+                if (maxMark < marks[i][j]) {
+                    maxMark = marks [i][j];
+                }
+                maxMarkArray[i] = maxMark;
+            }
+        }
+        return maxMarkArray;
     }
 
     private static int[][] nextArray(int countDisciplines, int countSemesters) {

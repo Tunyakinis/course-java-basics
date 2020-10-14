@@ -2,6 +2,10 @@ package com.rakovets.course.javabasics.practice.arrays;
 
 import com.rakovets.course.javabasics.util.StandardInputTask;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 /**
  * Разработать программу для электронного дневника:
  * которая работает с отметками только по одному предмету
@@ -31,7 +35,14 @@ public class Task01 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return 0.0;
+        double average = 0;
+        for (int i = 0; i < marks.length; i++) {
+            average += marks[i];
+        }
+        average /= marks.length;
+        DecimalFormat newFormat = new DecimalFormat("#.##", DecimalFormatSymbols.getInstance(Locale.US));
+        double result = Double.valueOf(newFormat.format(average));
+        return result;
     }
 
     /**
@@ -44,7 +55,13 @@ public class Task01 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return 0;
+        int minMark = marks[0];
+        for (int i = 0; i < marks.length; i++) {
+            if (minMark > marks[i]) {
+                minMark = marks[i];
+            }
+        }
+        return minMark;
     }
 
     /**
@@ -57,7 +74,13 @@ public class Task01 extends StandardInputTask {
         //TODO
         // Код, решающий задачу пишем ниже, при этом используя параметры метода
         // Для проверки решения необходимо запустить @Test для данного class (в директории test)
-        return 0;
+        int maxMark = marks[0];
+        for (int i = 0; i < marks.length; i++) {
+            if (maxMark < marks[i]) {
+                maxMark = marks[i];
+            }
+        }
+        return maxMark;
     }
 
     private static int[] nextArray(int countMarks) {

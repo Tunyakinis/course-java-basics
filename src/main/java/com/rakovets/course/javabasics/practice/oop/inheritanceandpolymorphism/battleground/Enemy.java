@@ -1,19 +1,20 @@
 package com.rakovets.course.javabasics.practice.oop.inheritanceandpolymorphism.battleground;
 
 public class Enemy implements Mortal {
-    public int health;
+    protected int health;
+    protected int damage;
 
     public Enemy(int health) {
         this.health = health;
     }
 
-    public void takeDamage(int damage) {
-        health -= damage;
+    public int takeDamage(int damage) {
+        this.health -= damage;
+        return this.health;
     }
 
-    public void attackHero(Hero hero) {
-        hero.takeDamage(20);
-        System.out.println("Your hero is under attack");
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
     public int getHealth() {

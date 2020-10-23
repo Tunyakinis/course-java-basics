@@ -1,6 +1,8 @@
 package com.rakovets.course.javabasics.practice.oop.inheritanceandpolymorphism.battleground;
 
-public class Archer extends Hero{
+public class Archer extends Hero {
+    private int damage = 30;
+
     public Archer(String name, int health) {
         super(name);
         this.health = health;
@@ -8,13 +10,8 @@ public class Archer extends Hero{
 
     @Override
     public void attackEnemy(Enemy enemy) {
-        enemy.takeDamage(18);
-        System.out.println("Your Archer attacks the enemy");
-    }
-
-    @Override
-    public void attackHero(Hero hero) {
-        hero.takeDamage(12);
-        System.out.println("Your Archer is under attack");
+        enemy.takeDamage(damage);
+        System.out.println("You have attacked enemy unit and takes " + damage + " of Health");
     }
 }
+

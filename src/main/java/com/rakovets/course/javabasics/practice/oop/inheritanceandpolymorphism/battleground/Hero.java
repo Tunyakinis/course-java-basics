@@ -8,7 +8,7 @@ public abstract class Hero {
         this.name = name;
     }
 
-    public abstract void attackEnemy(Enemy enemy);
+    abstract void attackEnemy(Enemy enemy);
 
     public void currentHealth(Hero hero) {
         if (hero.health > 0) {
@@ -17,12 +17,7 @@ public abstract class Hero {
         System.out.println("Your Hero is dead");
     }
 
-    public void attackHero(Hero hero) {
-        hero.takeDamage(10);
-        System.out.println("Your Hero is under attack");
-    }
-
-    public void takeDamage(int damage) {
+    public void heroTakesDamage(int damage) {
         this.health -= damage;
     }
 

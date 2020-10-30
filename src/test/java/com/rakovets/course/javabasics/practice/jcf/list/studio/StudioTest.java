@@ -48,7 +48,7 @@ public class StudioTest {
         troupe.add(new Actor("Dima", "Boris", 200, 27));
         Studio studio = new Studio(troupe);
         LinkedList<Actor> sortedTroupe = studio.getTroupeSortedByFeeAndLastNameComparator(troupe);
-        assertEquals("[Dima Boris fee:200 age:27, Dasha Kosarevskaya fee:800 age:25, Misha Lopachyk fee:600 age:26]", sortedTroupe.toString());
+        assertEquals("[Dima Boris fee:200 age:27, Misha Lopachyk fee:600 age:26, Dasha Kosarevskaya fee:800 age:25]", sortedTroupe.toString());
     }
 
     @Test
